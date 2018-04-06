@@ -44,18 +44,18 @@ public class MainActivity extends AppCompatActivity {
 
 
         }else {
-            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-            if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
-                startActivityForResult(intent, 1);
-
-            }
+            EasyImage.openCamera(MainActivity.this, 1);
         }
 
 
 
     }
 
+
+
+    public void LoadFromGalery(View view){
+        EasyImage.openGallery(MainActivity.this, 1);
+    }
 
 
     @Override
